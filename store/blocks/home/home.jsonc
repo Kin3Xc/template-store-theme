@@ -10,9 +10,106 @@
       "flex-layout.row#shelf",
       "info-card#home",
       "rich-text#question",
-      "rich-text#link",
-      "newsletter"
+      "rich-text#link"
+
+      // "category-menu"
+      // "flex-layout.row#newsletter"
+      // "flex-layout.row#form"
     ]
+  },
+
+  "flex-layout.row#newsletter": {
+    "children": ["newsletter-form"]
+  },
+
+// NEWSLETTER
+  "newsletter-form": {
+    "children": [
+      "newsletter-input-name",
+      "newsletter-input-email",
+      "newsletter-submit"
+    ]
+  },
+
+  // STORE FORM
+
+  "flex-layout.row#form": {
+    "children": [
+      "flex-layout.col#form"
+    ]
+  },
+  "flex-layout.col#form": {
+    "children": [
+      "form"
+    ]
+  },
+  "form": {
+    "props": {
+      "entity": "Person",
+      "schema": "person_schema"
+    },
+    "children": [
+      "rich-text#formTitle",
+      "form-input.text#firstName",
+      "form-input.text#lastName",
+      "form-input.text#emailForm",
+      "form-submit"
+    ],
+    "blocks": ["form-success"]
+  },
+  "rich-text#formTitle":{
+    "props": {
+      "textAlignment": "CENTER",
+      "textPosition": "CENTER",
+      "text": "Store Form - Formulario Person"
+    }
+  },
+  "form-success": {
+    "children": [
+      "rich-text#successSubmit"
+    ]
+  },
+  "rich-text#successSubmit": {
+    "props": {
+      "text": "Datos enviados correctamente!",
+      "textAlignment": "CENTER",
+      "textPosition": "CENTER"
+    }
+  },
+
+  "form-input.text#firstName": {
+    "props": {
+      "pointer": "#/properties/firstName",
+      "label": "First Name"
+    }
+  },
+  "form-input.text#lastName": {
+    "props": {
+      "pointer": "#/properties/lastName",
+      "label": "Last Name"
+    }
+  },
+  "form-input.text#emailForm": {
+    "props": {
+      "pointer": "#/properties/email",
+      "label": "Email"
+    }
+  },
+
+  "form-submit": {
+    "props": {
+      "label": "Enviar datos"
+    }
+  },
+
+  // CATEGORY MENU
+  "category-menu": {
+    "props": {
+      "showAllDepartments": true,
+      "showSubcategories": true,
+      "menuDisposition": "center",
+      "sortSubcategories": "name"
+    }
   },
 
   "list-context.image-list#demo": {
